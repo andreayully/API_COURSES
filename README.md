@@ -2,7 +2,7 @@
 # This is the API for Postman Course
 
 It is a simple version of an API builded with Django and Django Rest Framework
-using Docker. Created by @walis85300
+using Docker. Created by [@walis85300](https://github.com/walis85300)
 
 
 # You can learn how to build APIs here:
@@ -20,4 +20,6 @@ using Docker. Created by @walis85300
 - Run the migrations `python manage.py migrate`
 - Inside the docker container execute `source admin_info.sh`
 - Run the server `python manage.py runserver 0.0.0.0:8000`
+- Run test `python manage.py test`
+  
   
