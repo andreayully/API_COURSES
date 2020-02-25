@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "b4e286a6-0d8a-4300-b837-9a919474d623",
+		"name": "Curso Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "courses",
+			"item": [
+				{
+					"name": "GET List Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/courses/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST New Course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Curso de Selenium\",\n    \"description\": \"Curso de Selenium\",\n    \"teachers\": \n    [\n        {\n            \"name\": \"Hector Vega\",\n            \"description\": \"QA engineer\",\n            \"current_job\": \"QA engineer\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/courses/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Firts Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/courses/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Firts Course Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/courses/1",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST upload_badge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "badge",
+									"type": "file",
+									"src": "/home/isabel/Pictures/images.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/courses/1/upload_badge/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"courses",
+								"1",
+								"upload_badge",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "# Courses\n\nCourses application.",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Materials",
+			"item": [
+				{
+					"name": "GET List Materials",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/materials/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"materials",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET First Material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/materials/1/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"materials",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST New material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GET Comments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/materials/1/comments/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"materials",
+								"1",
+								"comments",
+								""
+							]
+						},
+						"description": "GET comments for material with id 1, that belong to course one"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\": \"A mi me funcionó en ubuntu\",\n\t\"likes\": 3,\n    \"material\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/comments/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"comments",
+								""
+							]
+						},
+						"description": "create one comment for materials 1"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Like comment 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/comments/1/like/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"comments",
+								"1",
+								"like",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Dislike comment 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/comments/1/dislike/",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"comments",
+								"1",
+								"dislike",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET token_authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1ed29f7e296da41b9e86cf8d80f0a1acf33f7259\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\": \"superadmin\",\n\"password\": \"ThisIs@SecurePassw0rd\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api-token-auth/",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api-token-auth",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
