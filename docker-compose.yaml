@@ -10,9 +10,9 @@ services:
       POSTGRES_DB: postgres
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: tail -F anything
     volumes:
-      - .:/project
+      - .:/code
     ports:
       - "8000:8000"
     depends_on:
